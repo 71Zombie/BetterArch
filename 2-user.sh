@@ -28,14 +28,17 @@ PKGS=(
 'autojump'
 'awesome-terminal-fonts'
 'brave-bin' # Brave Browser
+'discord_arch_electron' # Discord Electron
 'dxvk-bin' # DXVK DirectX to Vulcan
 'firefox'
 'github-desktop-bin' # Github Desktop sync
 'intellij-idea-community-edition'
 'lightly-git'
 'lightlyshaders-git'
+'lunar-client'
 'mangohud' # Gaming FPS Counter
 'mangohud-common'
+'minecraft-launcher'
 'nerd-fonts-fira-code'
 'nordic-darker-standard-buttons-theme'
 'nordic-darker-theme'
@@ -46,9 +49,12 @@ PKGS=(
 'playonlinux' # Wine frontend
 'pidgin'
 'plasma-pa'
+'ricochet-refresh'
 'ocs-url' # install packages from websites
 'sddm-nordic-theme-git'
 'snapper-gui-git'
+'steam-fonts'
+'tor-browser'
 'ttf-droid'
 'ttf-hack'
 'ttf-meslo' # Nerdfont package
