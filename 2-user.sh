@@ -68,6 +68,8 @@ for PKG in "${PKGS[@]}"; do
     yay -S --noconfirm $PKG
 done
 
+# Chat VIM IDE
+
 # Fish
 mkdir $HOME/.config/fish
 cp /root/BetterArch/dotfiles/fish/config.fish $HOME/.config/fish/
