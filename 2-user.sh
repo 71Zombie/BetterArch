@@ -32,6 +32,7 @@ PKGS=(
 'dxvk-bin' # DXVK DirectX to Vulcan
 'firefox'
 'github-desktop-bin' # Github Desktop sync
+'librewolf-bin'
 'intellij-idea-community-edition'
 'lightly-git'
 'lightlyshaders-git'

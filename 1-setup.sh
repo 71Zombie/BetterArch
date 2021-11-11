@@ -101,6 +101,7 @@ PKGS=(
 'efibootmgr' # EFI boot
 'egl-wayland'
 'element-desktop-git' # Matrix Client
+'exa' # Let's replace LS
 'exfat-utils'
 'fail2ban' # Intrusion prevention
 'flameshot'
