@@ -1,8 +1,5 @@
 # BetterArch Installer Script
 
-
-This README contains the steps I do to install and configure a fully-functional Arch Linux installation containing a desktop environment, all the support packages (network, bluetooth, audio, printers, etc.), along with all my preferred applications and utilities. The shell scripts in this repo allow the entire process to be automated.)
-
 ## Hardened Arch Linux
 
 - Linux-Hardened kernel
