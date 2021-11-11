@@ -30,6 +30,9 @@ echo -e "   ██    ▀███▀▀▀▀▀▀ ██    ██   ██�
 echo -e "   ██    ▄███▄    ▄ ██    ██   ██▄    ▄ ██      █▀      ██   ██    ██▄    ▄██    ██    "
 echo -e " ▄████████  ▀█████▀ ▀████ ▀████ ▀█████▀████▄  ▄███▄   ▄████▄████▄   █████▀████  ████▄  "
 echo -e "  - -----------------------------------------------------------------------------------"
+echo -e "-------------------------------------------------------------------------"
+echo -e "-Setting up $iso mirrors for faster downloads"
+echo -e "-------------------------------------------------------------------------"
 reflector -a 48 -c $iso -f 5 -l 20 --sort rate --save /etc/pacman.d/mirrorlist
 mkdir /mnt
 
@@ -111,13 +114,6 @@ cp -R ${SCRIPT_DIR} /mnt/root/BetterArch
 cp /etc/pacman.d/mirrorlist /mnt/etc/pacman.d/mirrorlist
 echo "--------------------------------------"
 echo "--GRUB BIOS Bootloader Install&Check--"
-echo "--------------------------------------"
-if [[ ! -d "/sys/firmware/efi" ]]; then
-    grub-install --boot-directory=/mnt/boot ${DISK}
-fi
-
-echo "--------------------------------------"
-echo "-- GRUB Bootloader Installation     --"
 echo "--------------------------------------"
 if [[ ! -d "/sys/firmware/efi" ]]; then
     grub-install --boot-directory=/mnt/boot ${DISK}
