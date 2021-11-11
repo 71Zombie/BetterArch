@@ -66,7 +66,6 @@ PKGS=(
 'xorg-xinit'
 'xterm'
 'plasma-desktop' # KDE Load second
-#-------------------------------------#
 'alsa-plugins' # audio plugins
 'alsa-utils' # audio utils
 'apparmor' # Security module
@@ -221,9 +220,7 @@ for PKG in "${PKGS[@]}"; do
     sudo pacman -S "$PKG" --noconfirm --needed
 done
 
-#
-# determine processor type and install microcode
-# 
+# Determine processor type and install microcode
 proc_type=$(lscpu | awk '/Vendor ID:/ {print $3}')
 case "$proc_type" in
 	GenuineIntel)

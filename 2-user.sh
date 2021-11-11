@@ -24,7 +24,6 @@ touch "$HOME/.cache/zshhistory"
 git clone "https://github.com/ChrisTitusTech/zsh"
 git clone --depth=1 https://github.com/romkatv/powerlevel10k.git $HOME/powerlevel10k
 ln -s "$HOME/zsh/.zshrc" $HOME/.zshrc
-echo "If chromium takes too long to install, you may CTRL-C to cancel it."
 PKGS=(
 'autojump'
 'awesome-terminal-fonts'
@@ -48,7 +47,6 @@ PKGS=(
 'pidgin'
 'plasma-pa'
 'ocs-url' # install packages from websites
-#'ungoogled-chromium'
 'sddm-nordic-theme-git'
 'snapper-gui-git'
 'ttf-droid'
@@ -63,11 +61,9 @@ for PKG in "${PKGS[@]}"; do
     yay -S --noconfirm $PKG
 done
 
-
 # Fish
 mkdir $HOME/.config/fish
 cp /root/BetterArch/dotfiles/fish/config.fish $HOME/.config/fish/
-
 
 export PATH=$PATH:~/.local/bin
 cp -r $HOME/BetterArch/dotfiles/* $HOME/.config/
@@ -77,12 +73,6 @@ sleep 1
 konsave -a kde
 
 echo -e "\nInstalling Portsmaster\n"
-#sudo pacman -S libnetfilter_queue libappindicator-gtk3
-#cd ~
-#git clone https://github.com/safing/portmaster-packaging
-#cd portmaster-packaging/linux
-#makepkg -is
-
 mkdir -p /var/lib/portmaster
 wget -O /tmp/portmaster-start https://updates.safing.io/latest/linux_amd64/start/portmaster-start
 sudo mv /tmp/portmaster-start /var/lib/portmaster/portmaster-start

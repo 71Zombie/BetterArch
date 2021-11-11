@@ -57,7 +57,6 @@ for PKG in "${PKGS[@]}"; do
     sudo pacman -S "$PKG" --noconfirm --needed
 done
 
-
 #echo -e "\nInstalling git repositories\n"
 #mkdir $HOME/git
 #cd $HOME/git
@@ -85,9 +84,7 @@ done
 #./configure
 #make
 #sudo make install
-
 cd ~
-
 
 echo "
 ###############################################################################
