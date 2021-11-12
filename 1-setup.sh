@@ -151,6 +151,7 @@ PKGS=(
 'm4'
 'make'
 'milou'
+'motrix' # Download manager
 'nano'
 'neofetch'
 'networkmanager'
