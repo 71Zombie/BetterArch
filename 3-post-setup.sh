@@ -67,3 +67,22 @@ systemctl enable bluetooth
 systemctl enable ufw
 systemctl enable fail2ban
 systemctl start fail2ban
+
+echo "
+###############################################################################
+# Cleaning
+###############################################################################
+"
+# Remove no password sudo rights
+sed -i 's/^%wheel ALL=(ALL) NOPASSWD: ALL/# %wheel ALL=(ALL) NOPASSWD: ALL/' /etc/sudoers
+# Add sudo rights
+sed -i 's/^# %wheel ALL=(ALL) ALL/%wheel ALL=(ALL) ALL/' /etc/sudoers
+
+# Replace in the same state
+cd $pwd
+
+echo "
+###############################################################################
+# Done - Please Eject Install Media and Reboot
+###############################################################################
+"
