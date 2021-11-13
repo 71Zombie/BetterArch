@@ -75,13 +75,6 @@ done
 mkdir $HOME/.config/fish
 cp /root/BetterArch/dotfiles/fish/config.fish $HOME/.config/fish/
 
-export PATH=$PATH:~/.local/bin
-cp -r $HOME/BetterArch/dotfiles/* $HOME/.config/
-pip install konsave
-konsave -i $HOME/BetterArch/kde.knsv
-sleep 1
-konsave -a kde
-
 echo -e "\nInstalling Portsmaster\n"
 mkdir -p /var/lib/portmaster
 wget -O /tmp/portmaster-start https://updates.safing.io/latest/linux_amd64/start/portmaster-start
@@ -93,6 +86,12 @@ git clone https://github.com/safing/portmaster-packaging/ /tmp/portmaster-packag
 sudo cp /tmp/portmaster-packaging/blob/master/linux/debian/portmaster.service /etc/systemd/system/
 sudo systemctl enable --now portmaster
 
+export PATH=$PATH:~/.local/bin
+cp -r $HOME/BetterArch/dotfiles/* $HOME/.config/
+pip install konsave
+konsave -i $HOME/BetterArch/kde.knsv
+sleep 1
+konsave -a kde
 
 echo -e "\nDone!\n"
 exit
