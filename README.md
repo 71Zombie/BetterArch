@@ -17,7 +17,7 @@ _Comes preinstalled with pentesting tools_
 ---
 ## Create Arch ISO or Use Image
 
-Download ArchISO from <https://archlinux.org/download/> and put on a USB drive with Ventoy or Etcher
+Download ArchISO from <https://archlinux.org/download/> and put on a USB drive with [Etcher](https://www.balena.io/etcher/), [Ventoy](https://www.ventoy.net/en/index.html), or [Rufus](https://rufus.ie/en/)
 
 
 ## Boot Arch ISO
