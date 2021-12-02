@@ -3,10 +3,14 @@ awesome-terminal-fonts
 brave-bin
 dxvk-bin
 github-desktop-bin
+librewolf-bin
+intelij-idea-community-edition
 lightly-git
 lightlyshaders-git
+lunar-client
 mangohud
 mangohud-common
+minecraft-launcher
 nerd-fonts-fira-code
 nordic-darker-standard-buttons-theme
 nordic-darker-theme
@@ -14,6 +18,7 @@ nordic-kde-git
 nordic-theme
 noto-fonts-emoji
 papirus-icon-theme
+pidgin
 plasma-pa
 ocs-url
 sddm-nordic-theme-git
@@ -22,5 +27,5 @@ ttf-droid
 ttf-hack
 ttf-meslo
 ttf-roboto
-zoom
 snap-pac
+youtube-dl-gui-git
