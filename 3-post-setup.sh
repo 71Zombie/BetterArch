@@ -40,6 +40,27 @@ EOF
 
 echo -ne "
 -------------------------------------------------------------------------
+                    Hardening Kernel & Firewall
+-------------------------------------------------------------------------
+"
+ufw limit 22/tcp
+ufw default deny incoming
+ufw default allow outgoing
+sudo cp fail2ban.local /etc/fail2ban/
+sysctl kernel.modules_disabled=1
+sysctl -a
+sysctl -A
+sysctl mib
+sysctl net.ipv4.conf.all.rp_filter
+sysctl -a --pattern 'net.ipv4.conf.(eth|wlan)0.arp'
+
+cat <<EOF > /etc/host.conf
+order bind,hosts
+multi on
+EOF
+
+echo -ne "
+-------------------------------------------------------------------------
                     Enabling Essential Services
 -------------------------------------------------------------------------
 "
@@ -50,37 +71,11 @@ systemctl disable dhcpcd.service
 systemctl stop dhcpcd.service
 systemctl enable NetworkManager.service
 systemctl enable bluetooth
-
-ufw limit 22/tcp
-ufw default deny incoming
-ufw default allow outgoing
-
-# --- Harden /etc/sysctl.conf
-sysctl kernel.modules_disabled=1
-sysctl -a
-sysctl -A
-sysctl mib
-sysctl net.ipv4.conf.all.rp_filter
-sysctl -a --pattern 'net.ipv4.conf.(eth|wlan)0.arp'
-
-# --- PREVENT IP SPOOFS
-cat <<EOF > /etc/host.conf
-order bind,hosts
-multi on
-EOF
-
-# --- Enable fail2ban
-sudo cp fail2ban.local /etc/fail2ban/
+systemctl enable fail2ban
 
 echo -ne "
 -------------------------------------------------------------------------
-                    Cleaning 
+                    SYSTEM READY FOR 4-pen-tools.sh
 -------------------------------------------------------------------------
 "
-# Remove no password sudo rights
-sed -i 's/^%wheel ALL=(ALL) NOPASSWD: ALL/# %wheel ALL=(ALL) NOPASSWD: ALL/' /etc/sudoers
-# Add sudo rights
-sed -i 's/^# %wheel ALL=(ALL) ALL/%wheel ALL=(ALL) ALL/' /etc/sudoers
-
-# Replace in the same state
-cd $pwd
+exit

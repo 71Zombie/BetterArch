@@ -115,8 +115,8 @@ if [ $(whoami) = "root"  ]; then
     useradd -m -G wheel,libvirt -s /bin/bash $username 
 # use chpasswd to enter $username:$password
     echo "$username:$password" | chpasswd
-	cp -R /root/$SCRIPTHOME /home/$username/
-    chown -R $username: /home/$username/$SCRIPTHOME
+	cp -R /root/BetterArch /home/$username/
+    chown -R $username: /home/$username/BetterArch
 # enter $hostname to /etc/hostname
 	echo $hostname > /etc/hostname
 else

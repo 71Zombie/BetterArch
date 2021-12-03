@@ -1,7 +1,5 @@
 #!/bin/bash
 
-# Find the name of the folder the scripts are in
-export SCRIPTHOME="$(basename -- $PWD)"
 echo -ne "
 ------------------------------------------------------------------------------------
                                                                           ▄▄
@@ -16,15 +14,16 @@ echo -ne "
 ------------------------------------------------------------------------------------
                     Automated Arch Linux Installer
 -------------------------------------------------------------------------
-                Scripts are in directory named $SCRIPTHOME
+                Scripts are in directory named BetterArch
 "
     bash startup.sh
     source setup.conf
     bash 0-preinstall.sh
-    arch-chroot /mnt /root/$SCRIPTHOME/1-setup.sh
-    source /mnt/root/$SCRIPTHOME/install.conf
-    arch-chroot /mnt /usr/bin/runuser -u $username -- /home/$username/$SCRIPTHOME/2-user.sh
-    arch-chroot /mnt /root/$SCRIPTHOME/3-post-setup.sh
+    arch-chroot /mnt /root/BetterArch/1-setup.sh
+    source /mnt/root/BetterArch/install.conf
+    arch-chroot /mnt /usr/bin/runuser -u $username -- /home/$username/BetterArch/2-user.sh
+    arch-chroot /mnt /root/BetterArch/3-post-setup.sh
+    arch-chroot /mnt /root/BetterArch/4-pen-tools.sh
 
 echo -ne "
 ------------------------------------------------------------------------------------
