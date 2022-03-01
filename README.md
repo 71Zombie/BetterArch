@@ -1,6 +1,5 @@
 # BetterArch Installer Script
 
-Note: There seems to be some sort of major issue/bug from upstream which will cause this script to fail. 
 
 ## Hardened Arch Linux
 
