@@ -8,7 +8,7 @@ xorg-xinit
 xterm
 binutils
 dosfstools
-linux-headers
+linux-hardened-headers
 noto-fonts-emoji
 usbutils
 xdg-user-dirs
